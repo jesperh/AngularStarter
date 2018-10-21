@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../shared/person';
 
+const PEOPLE = [new Person('Joe'), new Person('Jane')];
+
 @Component({
   selector: 'app-greetings',
   templateUrl: './greetings.component.html',
@@ -8,7 +10,8 @@ import { Person } from '../shared/person';
 })
 export class GreetingsComponent implements OnInit {
 
-  public people = [new Person('Joe'), new Person('Jane')];
+  public displayedColumns: string[] = ['name'];
+  public dataSource = PEOPLE;
 
   constructor() {
    }
