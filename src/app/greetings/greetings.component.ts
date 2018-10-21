@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../shared/person';
-
-const PEOPLE = [new Person('Joe'), new Person('Jane')];
+import { GreetingsService } from './greetings.service';
 
 @Component({
   selector: 'app-greetings',
@@ -11,12 +10,14 @@ const PEOPLE = [new Person('Joe'), new Person('Jane')];
 export class GreetingsComponent implements OnInit {
 
   public displayedColumns: string[] = ['name'];
-  public dataSource = PEOPLE;
+  public dataSource = [];
 
-  constructor() {
+  constructor(private greetingsService: GreetingsService) {
+
    }
 
   ngOnInit() {
+    this.dataSource = this.greetingsService.getPeopleToGreet();
   }
 
 }
