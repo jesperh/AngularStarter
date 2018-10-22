@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Person } from '../shared/person';
+import { of, Observable } from 'rxjs';
 
 const PEOPLE = [new Person('Joe'), new Person('Jane')];
 
@@ -10,7 +11,10 @@ export class GreetingsService {
 
   constructor() { }
 
-  getPeopleToGreet() {
-    return PEOPLE;
+  // In real application you would actually
+  // get data from api and return it with http
+  getPeopleToGreet(): Observable<Person[]> {
+    const source = of(PEOPLE);
+    return source;
   }
 }

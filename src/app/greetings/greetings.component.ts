@@ -13,11 +13,12 @@ export class GreetingsComponent implements OnInit {
   public dataSource = [];
 
   constructor(private greetingsService: GreetingsService) {
-
-   }
+  }
 
   ngOnInit() {
-    this.dataSource = this.greetingsService.getPeopleToGreet();
+    this.greetingsService.getPeopleToGreet().subscribe(people => {
+      this.dataSource = people;
+    });
   }
 
 }

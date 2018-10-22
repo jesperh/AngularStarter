@@ -8,10 +8,10 @@ const routes: Routes = [
     path: 'greetings',
     loadChildren: './greetings/greetings.module#GreetingsModule'
   },
-  // {
-  //   path: 'hello',
-  //   loadChildren: './hello/hello.module#HelloModule'
-  // },
+  {
+    path: 'hello',
+    loadChildren: './hello/hello.module#HelloModule'
+  },
   { path: 'home', component: HomeComponent },
   // { path: 'not-found', component: NotFoundComponent },
   // { path: '**', redirectTo: '/not-found' }
