@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Person } from '../shared/person';
 import { of, Observable } from 'rxjs';
 
-const PEOPLE = [new Person('Joe'), new Person('Jane')];
+export const PEOPLE = [new Person('Joe'), new Person('Jane')];
 
 @Injectable({
   providedIn: 'root'

@@ -1,12 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GreetingsService } from './greetings.service';
+import { GreetingsService, PEOPLE } from './greetings.service';
 
 describe('GreetingsService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: GreetingsService;
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.get(GreetingsService);
+  });
 
   it('should be created', () => {
-    const service: GreetingsService = TestBed.get(GreetingsService);
     expect(service).toBeTruthy();
   });
+
+  it('#getObservableValue should return value from observable',
+  (done: DoneFn) => {
+  service.getPeopleToGreet().subscribe(value => {
+    expect(value).toBe(PEOPLE);
+    done();
+  });
+});
+
 });
