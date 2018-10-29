@@ -1,0 +1,10 @@
+<div>
+  <form class="example-container" [formGroup]="greeterForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field hintLabel="Max 10 characters">
+      <input matInput placeholder="Input" formControlName="name">
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit" [disabled]="!greeterForm.valid">Submit</button>
+  </form>
+</div>
